@@ -22,3 +22,14 @@ CREATE TABLE IF NOT EXISTS items (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+-- Sample data
+INSERT INTO users (name, email, password_hash, role) VALUES
+('Admin User', 'admin@example.com', '$2b$10$REPLACE_WITH_BCRYPT_HASH', 'admin'),
+('Normal User', 'user@example.com', '$2b$10$REPLACE_WITH_BCRYPT_HASH', 'user');
+
+INSERT INTO items (user_id, title, description, category) VALUES
+(1, 'Admin Item 1', 'Created by admin', 'General'),
+(1, 'Admin Item 2', 'Another admin item', 'Operations'),
+(2, 'User Item 1', 'Created by user', 'Personal'),
+(2, 'User Item 2', 'Second user item', 'Personal');
