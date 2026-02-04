@@ -21,8 +21,11 @@ This project includes:
 
 ## Project Structure
 Accordia-app
+
 backend/ # Backend API server
-frontend/ # Angular single-page application
+
+frontend/ # Angular application
+
 database.sql # SQL script to initialize the database
 
 ## Running the app
