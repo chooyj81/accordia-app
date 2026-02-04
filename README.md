@@ -21,8 +21,11 @@ This project includes:
 
 ## Project Structure
 Accordia-app
+
 backend/ # Backend API server
-frontend/ # Angular single-page application
+
+frontend/ # Angular application
+
 database.sql # SQL script to initialize the database
 
 ## Running the app
@@ -36,13 +39,24 @@ cd backend
 npm install
 ```
 5. Create a local database (using the provided database.sql) and update connection settings in the backend config
-6. Start the backend server
+6. Update the database password in .env file:
+```
+File location: backend/.env
+
+PORT=3000
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=YOUR_PASSWORD_HERE  #CHANGE THIS TO YOUR LOCAL DATABASE PASSWORD
+DB_NAME=accordia_app
+JWT_SECRET=thisisasecuritykeyforjwt
+```
+7. Start the backend server
 ```
 npm start
 ```
 
 ### Frontend
-1. Go to the frontend folder:
+1. Open another terminal and go to frontend folder:
 ```
 cd frontend
 ```
